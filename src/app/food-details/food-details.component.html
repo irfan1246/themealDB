@@ -1,0 +1,18 @@
+
+<div class="meal-details" *ngIf="mealData">
+  <div class="meal-image">
+    <img [src]="mealData.strMealThumb" alt="Meal Image" id="mealImage">
+  </div>
+  <div class="meal-info">
+    <h2 id="mealName">Name : {{ mealData.strMeal }}</h2>
+    <p id="category">Category : {{ mealData.strCategory }}</p>
+    <p id="area">Area : {{ mealData.strArea }}</p>
+    <p id="tags">Tags : {{ mealData.strTags }}</p>
+    <h3>Instructions</h3>
+    <p id="instructions">{{ mealData.strInstructions}}</p>
+    <h3>Recipes</h3>
+    <ul id="recipes">
+      <li *ngFor="let ingredient of getIngredients()">{{ ingredient }}</li>
+    </ul>
+  </div>
+</div>
